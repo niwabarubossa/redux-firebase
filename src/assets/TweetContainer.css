@@ -28,7 +28,7 @@ body{
 .buttonContainer{
     /* background-color:white; */
     height:30px;
-    border:solid 1px red;
+    border:solid 1px gray;
 }
 .clearfix::after{
     content: "";

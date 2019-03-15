@@ -14,6 +14,7 @@ class TweetContainer extends Component {
                         <ContentsContainer />
                     </div>
                     <ButtonContainer />
+                
                 </div>
             </React.Fragment>
         )

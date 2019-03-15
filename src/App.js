@@ -3,12 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 import TweetsContainer from './components/TweetsContainer'
+import Header from './components/Header'
+import MainContainer from './components/MainContainer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <TweetsContainer />
+        <Header />
+        <MainContainer />
       </div>
     );
   }
