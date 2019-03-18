@@ -4,9 +4,6 @@ import ContentsContainer from './ContentsContainer'
 import ImageContainer from './ImageContainer'
 import ButtonContainer from './ButtonContainer'
 
-import { connect } from 'react-redux'
-import { firebaseLogin } from '../actions'
-
 class TweetContainer extends Component {
     render(){
         return(
@@ -24,7 +21,4 @@ class TweetContainer extends Component {
     }
 }
 
-const mapStateToProps = state => ({tweets: state.firebase.tweets})
-const mapDispatchToProps = ({ firebaseLogin })
-
-export default connect(mapStateToProps,mapDispatchToProps)(TweetContainer)
+export default TweetContainer;
