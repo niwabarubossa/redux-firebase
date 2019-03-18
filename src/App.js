@@ -17,11 +17,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <MainContainer />
+
       </div>
     );
   }
 }
 
+const mapStateToProps = state => ({tweets: state.firebase.tweets})
+const mapDispatchToProps = ({ firebaseLogin })
 
-
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App)
