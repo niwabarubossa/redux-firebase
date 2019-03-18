@@ -7,7 +7,7 @@ export default ( state = initialState, action ) => {
         case FIREBASELOGIN:
         console.log('-------------------------------------------------------------------------------------')
         console.log('firebase login action')
-            return { tweets: 'firebase login のリデューサー'}
+            return { ...state,tweets: 'firebase login のリデューサー'}
         default: 
             return state
     }

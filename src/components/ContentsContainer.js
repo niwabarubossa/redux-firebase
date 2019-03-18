@@ -27,4 +27,4 @@ class ContentsContainer extends Component {
 const mapStateToProps = state => ({tweets: state.firebase.tweets})
 const mapDispatchToProps = ({ firebaseLogin })
 
-export default connect({mapStateToProps,mapDispatchToProps})(ContentsContainer)
+export default connect(mapStateToProps,mapDispatchToProps)(ContentsContainer)
