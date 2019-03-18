@@ -16,7 +16,7 @@ class ContentsContainer extends Component {
 
         return(
             <div className="contentsContainer">
-                <p><strong>ここは名前が表示されます</strong></p>
+                <p><strong>{props.tweets}</strong></p>
                 <div onClick={props.firebaseLogin}>アクション発動</div>
                 <h1>aaaaa</h1>
             </div>

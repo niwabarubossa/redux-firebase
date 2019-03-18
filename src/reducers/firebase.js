@@ -1,13 +1,19 @@
+// reducers
 import { FIREBASELOGIN } from '../actions'
+
+import firebase from 'firebase';
+import { firestore } from '../plugins/firebase'
+import 'firebase/firestore';
+
 
 const initialState = { tweets: '' }
 
 export default ( state = initialState, action ) => {
     switch(action.type){
         case FIREBASELOGIN:
-        console.log('-------------------------------------------------------------------------------------')
-        console.log('firebase login action')
-            return { ...state,tweets: 'firebase login のリデューサー'}
+            console.log('----------------------firebase login action-----------------------')
+            firebase.auth().signInAnonymously()
+            return state
         default: 
             return state
     }
