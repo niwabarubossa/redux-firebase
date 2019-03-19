@@ -1,6 +1,6 @@
 // reducers
-import { FIREBASELOGIN } from '../actions'
-import { LOGINSTATUS } from '../actions'
+// import { FIREBASELOGIN } from '../actions'
+import { FIREBASELOGIN,LOGINSTATUS,FIREBASELOGOUT } from '../actions'
 
 import firebase from 'firebase';
 import { firestore } from '../plugins/firebase'
@@ -14,6 +14,14 @@ export default ( state = initialState, action ) => {
         case FIREBASELOGIN:
             console.log('----------------------firebase login action-----------------------')
             firebase.auth().signInAnonymously()
+            return state
+        case FIREBASELOGOUT:
+            firebase.auth().signOut()
+            .then(_ => {
+                console.log('logout complete')
+            }, err => {
+            // エラーを表示する等
+            });
             return state
         case LOGINSTATUS:
             firebase.auth().onAuthStateChanged(user => {
