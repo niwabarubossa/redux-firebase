@@ -15,3 +15,8 @@ export const loginStatus = () => ({
 export const firebaseLogout = () => ({
     type: FIREBASELOGOUT
 })
+
+// export const putEvent = values => async dispatch => {
+//     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)
+//     dispatch({ type: UPDATE_EVENT, response })
+// }

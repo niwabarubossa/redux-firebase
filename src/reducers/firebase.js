@@ -24,16 +24,18 @@ export default ( state = initialState, action ) => {
             });
             return state
         case LOGINSTATUS:
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                // ログイン中
-                console.log('ログイン中だ')
-                console.log(user)
-                } else {
-                //　ログアウト中
-                console.log('ログアウト中です。')
-                }
-            });
+            console.log('aaa')
+            // firebase.auth().onAuthStateChanged(user => {
+            //     if (user) {
+            //     // ログイン中
+            //     console.log('ログイン中だ')
+            //     console.log(user)
+            //     } else {
+            //     //　ログアウト中
+            //     console.log('ログアウト中です。')
+            //     }
+            // });
+
             return state
         default: 
             return state
