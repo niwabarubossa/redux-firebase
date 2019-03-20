@@ -8,7 +8,17 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 
-const store = createStore(reducer)
+
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { applyMiddleware } from 'redux'
+
+const enhancer = process.env.NODE_ENV === 'development' ?
+composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
+const store = createStore(reducer, enhancer)
+
+
+// const store = createStore(reducer)
 
 ReactDOM.render(
     <Provider store={store}>

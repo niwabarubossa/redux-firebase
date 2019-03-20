@@ -7,9 +7,9 @@ import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
 
 
-const initialState = { tweets: '' }
+const initialState = { text: '直接' }
 
-export default ( state = initialState, action ) => {
+export default ( state = {}, action ) => {
     switch(action.type){
         case FIREBASELOGIN:
             console.log('----------------------firebase login action-----------------------')
@@ -24,6 +24,8 @@ export default ( state = initialState, action ) => {
             });
             return state
         case LOGINSTATUS:
+            const test = action.aiueo
+            console.log(test)
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
                 // ログイン中
@@ -36,14 +38,16 @@ export default ( state = initialState, action ) => {
             });
             return state
         case SUBMITTWEET:
+        // 2
             const content = action.values
             console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-            console.log(content);
             firestore.collection('tweets').add({
-                content: content
+                content: this.state.text,
+                created_at: new Date(),
               }).then(() => {
                 console.log('aaa')
               });
+            
 
             return { state, content }
         default: 

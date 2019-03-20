@@ -16,7 +16,7 @@ export const firebaseLogin = () => ({
 //     type: LOGINSTATUS
 // })
 export const loginStatus = aiueo => async dispatch => {
-    dispatch({ type: SUBMITTWEET, aiueo })
+    dispatch({ type: LOGINSTATUS, aiueo })
 }
 export const firebaseLogout = () => ({
     type: FIREBASELOGOUT
