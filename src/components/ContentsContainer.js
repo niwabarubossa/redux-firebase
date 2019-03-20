@@ -7,7 +7,7 @@ import { Field, reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
 
 import { connect } from 'react-redux'
-import { firebaseLogin, loginStatus, firebaseLogout } from '../actions'
+import { firebaseLogin, loginStatus, firebaseLogout, submitTweet } from '../actions'
 // import { loginStatus } from '../actions'
 // import { dispatch } from 'rxjs/internal/observable/pairs';
 
@@ -25,6 +25,8 @@ class ContentsContainer extends Component {
     async onSubmit(values){
         const aiueo = values.target.inputText.value;
         console.log(aiueo);
+        await this.props.submitTweet(aiueo);
+        //今実際に仕えているアクションとの差分をログで確認して対照実験をする
     }
 
 
@@ -51,6 +53,6 @@ class ContentsContainer extends Component {
 }
 
 const mapStateToProps = state => ({tweets: state.firebase.tweets})
-const mapDispatchToProps = ({ firebaseLogin, loginStatus, firebaseLogout })
+const mapDispatchToProps = ({ firebaseLogin, loginStatus, firebaseLogout, submitTweet })
 
 export default connect(mapStateToProps,mapDispatchToProps)(ContentsContainer)

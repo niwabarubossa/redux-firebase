@@ -1,6 +1,6 @@
 // reducers
 // import { FIREBASELOGIN } from '../actions'
-import { FIREBASELOGIN,LOGINSTATUS,FIREBASELOGOUT } from '../actions'
+import { FIREBASELOGIN,LOGINSTATUS,FIREBASELOGOUT,SUBMITTWEET } from '../actions'
 
 import firebase from 'firebase';
 import { firestore } from '../plugins/firebase'
@@ -24,19 +24,28 @@ export default ( state = initialState, action ) => {
             });
             return state
         case LOGINSTATUS:
-            console.log('aaa')
-            // firebase.auth().onAuthStateChanged(user => {
-            //     if (user) {
-            //     // ログイン中
-            //     console.log('ログイン中だ')
-            //     console.log(user)
-            //     } else {
-            //     //　ログアウト中
-            //     console.log('ログアウト中です。')
-            //     }
-            // });
-
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                // ログイン中
+                console.log('ログイン中だ')
+                console.log(user)
+                } else {
+                //　ログアウト中
+                console.log('ログアウト中です。')
+                }
+            });
             return state
+        case SUBMITTWEET:
+            const content = action.values
+            console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+            console.log(content);
+            firestore.collection('tweets').add({
+                content: content
+              }).then(() => {
+                console.log('aaa')
+              });
+
+            return { state, content }
         default: 
             return state
     }
