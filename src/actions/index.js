@@ -23,7 +23,8 @@ export const firebaseLogout = () => ({
 })
 export const submitTweet = values => async dispatch => {
     // const values = values
-    dispatch({ type: SUBMITTWEET, values })
+    const new_values = values
+    dispatch({ type: SUBMITTWEET, new_values })
 }
 
 // export const putEvent = values => async dispatch => {
