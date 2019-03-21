@@ -24,32 +24,22 @@ export default ( state = {}, action ) => {
             });
             return state
         case LOGINSTATUS:
-            const test = action.aiueo
-            console.log(test)
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
-                // ログイン中
                 console.log('ログイン中だ')
-                console.log(user)
                 } else {
-                //　ログアウト中
                 console.log('ログアウト中です。')
                 }
             });
             return state
         case SUBMITTWEET:
-        // 2
-            const content = action.values
-            console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
             firestore.collection('tweets').add({
-                content: this.state.text,
+                title: action.new_values.title,
+                body: action.new_values.body,
                 created_at: new Date(),
               }).then(() => {
-                console.log('aaa')
               });
-            
-
-            return { state, content }
+            return state 
         default: 
             return state
     }
