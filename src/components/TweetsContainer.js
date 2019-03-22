@@ -8,9 +8,6 @@ class TweetsContainer extends Component {
         return(
             <div className="tweetsContainer">
                 <TweetContainer />
-                <TweetContainer />
-                <TweetContainer />
-                <TweetContainer />
             </div>
         )
     }

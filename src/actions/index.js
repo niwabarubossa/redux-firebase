@@ -3,6 +3,7 @@ export const FIREBASELOGIN = 'FIREBASELOGIN'
 export const LOGINSTATUS = 'LOGINSTATUS'
 export const FIREBASELOGOUT = 'FIREBASELOGOUT'
 export const SUBMITTWEET = 'SUBMITTEXT'
+export const GETTWEETS = 'GETTWEETS'
 
 const aiueo = 'action/index.js　におけるconst'
 
@@ -26,6 +27,9 @@ export const submitTweet = values => async dispatch => {
     const new_values = values
     dispatch({ type: SUBMITTWEET, new_values })
 }
+export const getTweets = () => ({
+    type: GETTWEETS
+})
 
 // export const putEvent = values => async dispatch => {
 //     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)

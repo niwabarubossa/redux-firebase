@@ -1,15 +1,12 @@
-// reducers
-// import { FIREBASELOGIN } from '../actions'
-import { FIREBASELOGIN,LOGINSTATUS,FIREBASELOGOUT,SUBMITTWEET } from '../actions'
+import { FIREBASELOGIN,LOGINSTATUS,FIREBASELOGOUT,SUBMITTWEET,GETTWEETS } from '../actions'
 
 import firebase from 'firebase';
 import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
 
+const initialState = { reducer_tweets: [] }
 
-const initialState = { text: '直接' }
-
-export default ( state = {}, action ) => {
+export default ( state = initialState , action ) => {
     switch(action.type){
         case FIREBASELOGIN:
             console.log('----------------------firebase login action-----------------------')
@@ -40,23 +37,27 @@ export default ( state = {}, action ) => {
               }).then(() => {
               });
             return state 
+        case GETTWEETS:
+            // const tweets = firestore.collection("tweets").get().then(function(querySnapshot) {
+            //     querySnapshot.forEach(function(doc) {
+            //         console.log(doc.data());
+            //     });
+            // });
+            // debugger;
+            const temperature = []
+            firestore.collection("tweets").get().then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                    console.log(doc.data());
+                    temperature.push(doc.data())
+                });
+            });
+
+            return Object.assign({}, 
+                state, 
+                {
+                  reducer_tweets: temperature
+                });
         default: 
             return state
     }
 }
-
-
-
-// const initialState = { value: 0 }
-
-// export default ( state = initialState, action) => {
-//     switch(action.type){
-//         case INCREMENT:
-//             return { value: state.value + 1 }
-//         case DECREMENT:
-//             return { value: state.value - 1 }
-//         default:
-//             return state
-
-//     }
-// }

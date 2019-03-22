@@ -31,7 +31,6 @@ class ContentsContainer extends Component {
                 type={type}
                 errorText={touched && error}
                 {...input}
-                fullWidth={true}
             />
         )
     }
@@ -39,21 +38,7 @@ class ContentsContainer extends Component {
         await this.props.submitTweet(values)
         // this.props.history.push('/')
     }
-
-    // sampleSubmit(event){
-    //     firestore.collection('tweets').add({
-    //         content: 'sampleContent',
-    //         created_at: new Date(),
-    //       }).then(() => {
-    //         console.log('aaa')
-    //       });
-    // }
-
     
-
-
-
-
     render(){
         const { handleSubmit, pristine, submitting, invalid } = this.props
         const style = { margin: 12 }
