@@ -14,10 +14,14 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { applyMiddleware } from 'redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
+import { getPosts } from './actions'
+
 const enhancer = process.env.NODE_ENV === 'development' ?
 composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
 const store = createStore(reducer, enhancer)
 
+
+store.dispatch(getPosts())
 
 // const store = createStore(reducer)
 

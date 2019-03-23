@@ -1,3 +1,7 @@
+import firebase from 'firebase';
+import { firestore } from '../plugins/firebase'
+import 'firebase/firestore';
+
 export const READTWEETS = 'READTWEETS'
 export const FIREBASELOGIN = 'FIREBASELOGIN'
 export const LOGINSTATUS = 'LOGINSTATUS'
@@ -30,6 +34,54 @@ export const submitTweet = values => async dispatch => {
 export const getTweets = () => ({
     type: GETTWEETS
 })
+
+// -------------------------------------------------------------------------------------
+
+export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST'
+const getPostsRequest = () => {
+  return {
+    type: GET_POSTS_REQUEST
+  }
+}
+
+export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
+const getPostsSuccess = (json) => {  
+  return {
+    type: GET_POSTS_SUCCESS,
+    posts: json,
+    receivedAt: Date.now()
+  }
+}
+
+// export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE'
+// const getPostsFailure = (error) => {
+//   type: GET_POSTS_FAILURE,
+//   error
+// }
+
+export const getPosts = () => {
+//   return (dispatch) => {
+//     dispatch(getPostsRequest())
+//     return axios.get(`http://localhost:3000/api/v1/posts`)
+//       .then(res =>
+//         dispatch(getPostsSuccess(res.data))
+//       ).catch(err => 
+//         dispatch(getPostsFailure(err))
+//       )
+//   }
+
+  return (dispatch) => {
+      dispatch(getPostsRequest())
+      const temperature = []
+      firestore.collection("tweets").get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              temperature.push(doc.data())
+          });
+      });
+      return dispatch(getPostsSuccess(temperature))
+  }
+
+}
 
 // export const putEvent = values => async dispatch => {
 //     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)
