@@ -53,23 +53,7 @@ const getPostsSuccess = (json) => {
   }
 }
 
-// export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE'
-// const getPostsFailure = (error) => {
-//   type: GET_POSTS_FAILURE,
-//   error
-// }
-
 export const getPosts = () => {
-//   return (dispatch) => {
-//     dispatch(getPostsRequest())
-//     return axios.get(`http://localhost:3000/api/v1/posts`)
-//       .then(res =>
-//         dispatch(getPostsSuccess(res.data))
-//       ).catch(err => 
-//         dispatch(getPostsFailure(err))
-//       )
-//   }
-
   return (dispatch) => {
       dispatch(getPostsRequest())
       const temperature = []
@@ -80,10 +64,11 @@ export const getPosts = () => {
       });
       return dispatch(getPostsSuccess(temperature))
   }
-
 }
 
 // export const putEvent = values => async dispatch => {
 //     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)
 //     dispatch({ type: UPDATE_EVENT, response })
 // }
+
+// var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]

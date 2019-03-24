@@ -1,25 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Post from './Post'
 
-const PostList = ({ state_posts }) => (
-  <ul>
-    {
-        state_posts.map((post, index) => 
-        <Post key={index} {...post}/>
-      )
-    }
-  </ul>
+
+// const PostList = ({ state_posts }) => (
+//   <ul>
+//     {
+//         state_posts.map((state_post, index) => 
+//         <Post key={index} {...state_post}/>
+//       )
+//     }
+//   </ul>
+// )
+
+class PostList extends Component{
+  render() {
+    return(
+      <div>
+      
+      {this.props.state_posts.map((state_post) => 
+        <Post key={state_post.title} {...state_post} />
+      )}
+
+      </div>
+    )
+    
+  }
+}
+
+var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]
+hairetu.map((one) =>
+    console.log(one.body)
 )
-
-// PostList.propTypes = {
-//   posts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       _id: PropTypes.object.isRequired,
-//       body: PropTypes.string.isRequired,
-//       created_at: PropTypes.string.isRequired,
-//       updated_at: PropTypes.string.isRequired
-//     }).isRequired
-//   ).isRequired
-// }
-
+var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]
 export default PostList

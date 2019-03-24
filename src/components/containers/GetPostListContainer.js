@@ -3,12 +3,11 @@ import PostList from '../PostList'
 
 const mapStateToProps = (state) => {    
   // const count = state.posts.count
-  console.log(state)
-  console.log(state.firebase)
-  console.log(state.firebase[2].items)
-  // const currentState = state.posts[2]  // 一番新しいstateを取り出す
-  const currentState = state.firebase[2].items
-  return { state_posts: currentState }  // 描画するのに必要なのはとりあえずitemsだけなのでitemsだけ返す
+  const length = Object.keys(state.firebase).length
+  const currentState = state.firebase[length-1].items
+  console.log('---------current state----------')
+  console.log(currentState);
+  return { state_posts: currentState }
 }
 
 const GetPostList = connect(
