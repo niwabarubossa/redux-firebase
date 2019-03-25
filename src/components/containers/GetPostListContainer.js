@@ -34,10 +34,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-// const GetPostList = connect(
-//    mapStateToProps
-//   ,mapDispatchToProps
-// )(PostList)
 export default connect(
   mapStateToProps,
   mapDispatchToProps

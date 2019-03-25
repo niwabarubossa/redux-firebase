@@ -54,7 +54,6 @@ const getPostsSuccess = (json) => {
 }
 
 export const getPosts = () => {
-    console.log('get posts action')
     return (dispatch) => {
         dispatch(getPostsRequest())
         const temperature = []

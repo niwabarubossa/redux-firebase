@@ -17,9 +17,9 @@ class PostList extends Component{
     return(
       <div>
 
-      {this.props.state_posts.map((state_post) => 
+      {/* {this.props.state_posts.map((state_post) => 
         <Post key={state_post.title} {...state_post} />
-      )}
+      )} */}
 
       </div>
     )
