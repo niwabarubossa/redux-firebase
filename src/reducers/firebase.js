@@ -70,7 +70,7 @@ export default ( state = [initialState] , action ) => {
               ...state,
               {
                 isFetching: false,
-                items: action.posts,
+                items: action.temperature,
                 lastUpdated: action.receivedAt
               }
             ]
