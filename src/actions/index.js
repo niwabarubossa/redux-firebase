@@ -53,27 +53,18 @@ const getPostsSuccess = (json) => {
   }
 }
 
-export const getPosts = () => async dispatch => {
-    // console.log('get posts action')
-    // return (dispatch) => {
-        dispatch(getPostsRequest());
+export const getPosts = () => {
+    console.log('get posts action')
+    return (dispatch) => {
+        dispatch(getPostsRequest())
         const temperature = []
-        await firestore.collection("tweets").get().then(function(querySnapshot) {
+        firestore.collection("tweets").get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 temperature.push(doc.data())
             });
         });
-        dispatch({ type: GET_POSTS_SUCCESS, temperature })
-    //     const temperature = []
-    //     firestore.collection("tweets").get().then(function(querySnapshot) {
-    //         querySnapshot.forEach(function(doc) {
-    //             temperature.push(doc.data())
-    //         });
-    //     });
-    //     console.log(dispatch(getPostsRequest()))
-    //     console.log(dispatch(getPostsSuccess(temperature)))
-    //     return dispatch(getPostsSuccess(temperature))
-    // }
+        return dispatch(getPostsSuccess(temperature))
+    }
 }
 
 // export const putEvent = values => async dispatch => {

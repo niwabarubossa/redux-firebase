@@ -14,7 +14,6 @@ import Post from './Post'
 
 class PostList extends Component{
   render() {
-    debugger;
     return(
       <div>
 
