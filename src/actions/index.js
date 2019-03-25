@@ -54,16 +54,16 @@ const getPostsSuccess = (json) => {
 }
 
 export const getPosts = () => {
-  return (dispatch) => {
-      dispatch(getPostsRequest())
-      const temperature = []
-      firestore.collection("tweets").get().then(function(querySnapshot) {
-          querySnapshot.forEach(function(doc) {
-              temperature.push(doc.data())
-          });
-      });
-      return dispatch(getPostsSuccess(temperature))
-  }
+    return (dispatch) => {
+        dispatch(getPostsRequest())
+        const temperature = []
+        firestore.collection("tweets").get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                temperature.push(doc.data())
+            });
+        });
+        return dispatch(getPostsSuccess(temperature))
+    }
 }
 
 // export const putEvent = values => async dispatch => {
