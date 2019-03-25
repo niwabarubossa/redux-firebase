@@ -62,6 +62,8 @@ export const getPosts = () => {
               temperature.push(doc.data())
           });
       });
+      console.log(dispatch(getPostsRequest()))
+      console.log(dispatch(getPostsSuccess(temperature)))
       return dispatch(getPostsSuccess(temperature))
   }
 }

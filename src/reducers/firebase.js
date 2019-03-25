@@ -63,6 +63,9 @@ export default ( state = [initialState] , action ) => {
               }
             ]
         case GET_POSTS_SUCCESS:
+            console.log('GET POSTS SUCCESS in reducer')
+            console.log(action.posts)
+            console.log('GET POSTS SUCCESS in reducer')
             return [
               ...state,
               {

@@ -21,8 +21,6 @@ composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
 const store = createStore(reducer, enhancer)
 
 
-store.dispatch(getPosts())
-
 // const store = createStore(reducer)
 
 ReactDOM.render(
