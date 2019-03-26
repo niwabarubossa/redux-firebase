@@ -45,26 +45,24 @@ const getPostsRequest = () => {
 }
 
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
-const getPostsSuccess = (json) => {  
+const getPostsSuccess = (temperatureList) => {  
   return {
     type: GET_POSTS_SUCCESS,
-    posts: json,
+    posts: temperatureList,
     receivedAt: Date.now()
   }
 }
 
-export const getPosts = () => {
-    return (dispatch) => {
-        dispatch(getPostsRequest())
-        const temperature = []
-        firestore.collection("tweets").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                temperature.push(doc.data())
-            });
-        });
-        return dispatch(getPostsSuccess(temperature))
+export const getPosts = () => async dispatch => {
+    try {
+        dispatch(getPostsRequest());
+        const querySnapshot = await firestore.collection("tweets").get();
+        const temperatureList = querySnapshot.map(doc => doc.data());
+        dispatch(getPostsSuccess(temperatureList));
+    } catch (error) {
+        console.log('getposts error')
     }
-}
+  };
 
 // export const putEvent = values => async dispatch => {
 //     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)
