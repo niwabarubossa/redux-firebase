@@ -8,7 +8,6 @@ import firebase from 'firebase';
 import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
 
-// const initialState = { reducer_tweets: [] }
 const initialState = {
     isFetching: false,
     items: []
@@ -17,7 +16,6 @@ const initialState = {
 export default ( state = [initialState] , action ) => {
     switch(action.type){
         case FIREBASELOGIN:
-            console.log('----------------------firebase login action-----------------------')
             firebase.auth().signInAnonymously()
             return state
         case FIREBASELOGOUT:
@@ -25,7 +23,7 @@ export default ( state = [initialState] , action ) => {
             .then(_ => {
                 console.log('logout complete')
             }, err => {
-            // エラーを表示する等
+                console('logout error')
             });
             return state
         case LOGINSTATUS:

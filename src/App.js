@@ -11,14 +11,11 @@ import GetPostList from './components/containers/GetPostListContainer'
 
 class App extends Component {
   render() {
-
-
     return (
       <div className="App">
         {/* <Header />
         <MainContainer /> */}
         <GetPostList />
-
       </div>
     );
   }
