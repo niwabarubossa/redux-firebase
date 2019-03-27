@@ -1,35 +1,17 @@
 import React, { Component } from 'react';
 import Post from './Post'
+import ProjectSummary from './ProjectSummary'
 
-
-// const PostList = ({ state_posts }) => (
-//   <ul>
-//     {
-//         state_posts.map((state_post, index) => 
-//         <Post key={index} {...state_post}/>
-//       )
-//     }
-//   </ul>
-// )
-
-class PostList extends Component{
-  render() {
-    return(
-      <div>
-
-      {/* {this.props.state_posts.map((state_post) => 
-        <Post key={state_post.title} {...state_post} />
-      )} */}
-
-      </div>
-    )
-    
-  }
+const PostList = ({props}) => {
+  return (
+    <div className="project-list section">
+      { props.projects && props.projects.map(project => {
+        return (
+          <ProjectSummary project={project} key={project.id} />
+        )
+      })}  
+    </div>
+  )
 }
 
-var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]
-hairetu.map((one) =>
-    console.log(one.body)
-)
-var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]
 export default PostList

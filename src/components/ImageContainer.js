@@ -8,4 +8,5 @@ class ImageContainer extends Component {
         )
     }
 }
+
 export default ImageContainer;

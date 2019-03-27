@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { firestore } from '../plugins/firebase'
+import { firestore } from '../plugins/fbConfig'
 import 'firebase/firestore';
 
 export const READTWEETS = 'READTWEETS'
@@ -9,7 +9,7 @@ export const FIREBASELOGOUT = 'FIREBASELOGOUT'
 export const SUBMITTWEET = 'SUBMITTEXT'
 export const GETTWEETS = 'GETTWEETS'
 
-const aiueo = 'action/index.js　におけるconst'
+export const CREATE_PROJECT = 'CREATE_PROJECT'
 
 export const readTweets = () => ({
     type: READTWEETS
@@ -17,9 +17,6 @@ export const readTweets = () => ({
 export const firebaseLogin = () => ({
     type: FIREBASELOGIN
 })
-// export const loginStatus = () => ({
-//     type: LOGINSTATUS
-// })
 export const loginStatus = aiueo => async dispatch => {
     dispatch({ type: LOGINSTATUS, aiueo })
 }
@@ -27,7 +24,6 @@ export const firebaseLogout = () => ({
     type: FIREBASELOGOUT
 })
 export const submitTweet = values => async dispatch => {
-    // const values = values
     const new_values = values
     dispatch({ type: SUBMITTWEET, new_values })
 }
@@ -35,7 +31,6 @@ export const getTweets = () => ({
     type: GETTWEETS
 })
 
-// -------------------------------------------------------------------------------------
 
 export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST'
 const getPostsRequest = () => {
@@ -43,7 +38,6 @@ const getPostsRequest = () => {
     type: GET_POSTS_REQUEST
   }
 }
-
 export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
 const getPostsSuccess = (json) => {  
   return {
@@ -52,8 +46,8 @@ const getPostsSuccess = (json) => {
     receivedAt: Date.now()
   }
 }
-
 export const getPosts = () => {
+<<<<<<< HEAD
     return (dispatch) => {
         dispatch(getPostsRequest())
         const temperature = []
@@ -64,11 +58,34 @@ export const getPosts = () => {
         });
         return dispatch(getPostsSuccess(temperature))
     }
+=======
+  return (dispatch) => {
+      dispatch(getPostsRequest())
+      const temperature = []
+    //   firestore.collection("tweets").get().then(function(querySnapshot) {
+    //       querySnapshot.forEach(function(doc) {
+    //           temperature.push(doc.data())
+    //       });
+    //   });
+      return dispatch(getPostsSuccess(temperature))
+  }
+>>>>>>> react_redux_firebase
 }
+export const createProject = (project) => {
+    return ( dispatch, getState , { getFirebase, getFireStore } ) => {
+        //make async call
+        // const firestore = getFireStore;
 
-// export const putEvent = values => async dispatch => {
-//     const response = await axios.put(`${ROOT_URL}/events/${values.id}${QUERYSTRING}`, values)
-//     dispatch({ type: UPDATE_EVENT, response })
-// }
-
-// var hairetu = [{title: 'aiueo',body: 'aiueo'},{title: 'kaki',body: 'bady'}]
+        firestore.collection('projects').add({
+            ...project,
+            authorFirstName: 'ryo',
+            authorLastName: 'rrrr',
+            authorId: 12345,
+            createdAt: new Date()
+        }).then(() => {
+            dispatch({ type: CREATE_PROJECT, project});
+        }).catch((err) => {
+            dispatch({ type: 'CREATE_PROJECT_ERR', project});
+        })
+    }
+};

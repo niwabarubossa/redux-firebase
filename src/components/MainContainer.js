@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import '../assets/MainContainer.css'
 import TweetsContainer from './TweetsContainer'
 import TweetsDisplaysContainer from './TweetsDisplaysContainer'
