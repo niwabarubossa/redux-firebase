@@ -47,18 +47,6 @@ const getPostsSuccess = (json) => {
   }
 }
 export const getPosts = () => {
-<<<<<<< HEAD
-    return (dispatch) => {
-        dispatch(getPostsRequest())
-        const temperature = []
-        firestore.collection("tweets").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                temperature.push(doc.data())
-            });
-        });
-        return dispatch(getPostsSuccess(temperature))
-    }
-=======
   return (dispatch) => {
       dispatch(getPostsRequest())
       const temperature = []
@@ -69,7 +57,6 @@ export const getPosts = () => {
     //   });
       return dispatch(getPostsSuccess(temperature))
   }
->>>>>>> react_redux_firebase
 }
 export const createProject = (project) => {
     return ( dispatch, getState , { getFirebase, getFireStore } ) => {
