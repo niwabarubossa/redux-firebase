@@ -10,10 +10,11 @@ import 'firebase/firestore';
 
 const initialState = {
     isFetching: false,
-    items: []
+    items: [],
+    projects: []
   }
 
-export default ( state = [initialState] , action ) => {
+export default ( state = initialState , action ) => {
     switch(action.type){
         case FIREBASELOGIN:
             firebase.auth().signInAnonymously()

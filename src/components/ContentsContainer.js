@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import firebase from 'firebase';
 // import { firestore } from '../plugins/firebase'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+
 import 'firebase/firestore';
 import { Field, reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
@@ -53,8 +56,8 @@ class ContentsContainer extends Component {
     }
     
     render(){
-        const { handleSubmit, pristine, submitting, invalid } = this.props
-        const style = { margin: 12 }
+
+        const { projects } = this.props;
 
         return(
             <div className="contentsContainer">
@@ -108,8 +111,19 @@ const mapDispatchToProps = dispatch => {
     };
   };
 
+const mapStateToProps = (state) => {
+    return {
+        projects: state.firebase.projects
+    }
+}
 // const mapDispatchToProps = ({ submitTweet })
 
-export default connect(null, mapDispatchToProps)(
-    reduxForm({ validate, form: 'contentsContainerForm' })(ContentsContainer)
-)
+// export default connect(null, mapDispatchToProps)(
+//     reduxForm({ validate, form: 'contentsContainerForm' })(ContentsContainer)
+// )
+export default compose(
+    connect(mapStateToProps,mapDispatchToProps),
+    firestoreConnect([
+        { collection: 'projects'}
+    ])
+)(ContentsContainer)
