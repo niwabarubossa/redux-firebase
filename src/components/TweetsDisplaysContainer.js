@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { getTweets } from '../actions'
 
 import firebase from 'firebase';
-import { firestore } from '../plugins/firebase'
+// import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
 import { runInThisContext } from 'vm';
 
@@ -18,17 +18,17 @@ class TweetsDisplaysContainer extends Component {
     }
 
       componentDidMount(){
-        const temptweets = []
-        firestore.collection("tweets").get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                // console.log(doc.data().content);
-                // 新しく作った一時的な配列にpush
-                temptweets.push(doc.data())
-            });
-        });
-        this.setState({
-            sampletweets: temptweets
-        })
+        // const temptweets = []
+        // firestore.collection("tweets").get().then(function(querySnapshot) {
+        //     querySnapshot.forEach(function(doc) {
+        //         // console.log(doc.data().content);
+        //         // 新しく作った一時的な配列にpush
+        //         temptweets.push(doc.data())
+        //     });
+        // });
+        // this.setState({
+        //     sampletweets: temptweets
+        // })
       }
 
       componentDidUpdate(){

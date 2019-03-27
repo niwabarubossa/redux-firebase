@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 
 import firebase from 'firebase';
-import { firestore } from '../plugins/firebase'
+// import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
 import { Field, reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
-
 import { connect } from 'react-redux'
-import { firebaseLogin, loginStatus, firebaseLogout, submitTweet } from '../actions'
-// import { loginStatus } from '../actions'
-// import { dispatch } from 'rxjs/internal/observable/pairs';
+import { firebaseLogin, loginStatus, firebaseLogout, submitTweet, createProject, getPosts } from '../actions'
 
 
 class ContentsContainer extends Component {
 
+    state={
+        title: '',
+        body: ''
+    }
+
     constructor(props){
         super(props)
         this.onSubmit = this.onSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
     renderField(field){
@@ -37,6 +40,16 @@ class ContentsContainer extends Component {
     async onSubmit(values){
         await this.props.submitTweet(values)
         // this.props.history.push('/')
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+    firebase_submit = (e) => {
+        e.preventDefault();
+        this.props.createProject(this.state)
     }
     
     render(){
@@ -59,11 +72,17 @@ class ContentsContainer extends Component {
                 </form> */}
                 <h1>aaaaa</h1>
 
-                <form onSubmit={handleSubmit(this.onSubmit)}>
+                {/* <form onSubmit={handleSubmit(this.onSubmit)}>
                     <div><Field label="Title" name="title" type="text" component={this.renderField} /></div>
                     <div><Field label="Body" name="body" type="text" component={this.renderField} /></div>
 
                     <RaisedButton label="Submit" type="submit" style={style} />
+                </form> */}
+
+                <form onSubmit={this.firebase_submit}>
+
+                    <textarea id="content" onChange={this.handleChange} />
+                    <button>create</button>
                 </form>
 
 
@@ -81,14 +100,16 @@ const validate = values => {
 }
 
 
-const mapDispatchToProps = ({ submitTweet })
+const mapDispatchToProps = dispatch => {
+    return {
+        submitTweet: () => dispatch(submitTweet()),
+        getPosts: () => dispatch(getPosts()),
+        createProject: (project) => dispatch(createProject(project))
+    };
+  };
+
+// const mapDispatchToProps = ({ submitTweet })
 
 export default connect(null, mapDispatchToProps)(
     reduxForm({ validate, form: 'contentsContainerForm' })(ContentsContainer)
 )
-
-
-// const mapStateToProps = state => ({tweets: state.firebase.tweets})
-// const mapDispatchToProps = ({ firebaseLogin, loginStatus, firebaseLogout, submitTweet })
-
-// export default connect(mapStateToProps,mapDispatchToProps)(ContentsContainer)

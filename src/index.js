@@ -4,26 +4,28 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 
-
 import thunk from 'redux-thunk'
+import { reduxFirestore, getFirestore } from 'redux-firestore'
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
+import fbConfig from './plugins/fbConfig'
+
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { applyMiddleware } from 'redux'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import { getPosts } from './actions'
 
-const enhancer = process.env.NODE_ENV === 'development' ?
-composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
-const store = createStore(reducer, enhancer)
-
-
-store.dispatch(getPosts())
-
-// const store = createStore(reducer)
+// const enhancer = process.env.NODE_ENV === 'development' ?
+// composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
+const store = createStore(reducer,
+    compose(
+        applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+        reduxFirestore(fbConfig),
+        reactReduxFirebase(fbConfig)
+    )
+)
 
 ReactDOM.render(
     <MuiThemeProvider>
