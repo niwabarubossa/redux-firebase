@@ -10,6 +10,9 @@ import { Field, reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 
+import Post from './Post'
+import PostList from './PostList'
+
 import { connect } from 'react-redux'
 import { firebaseLogin, loginStatus, firebaseLogout, submitTweet, createProject, getPosts } from '../actions'
 
@@ -27,19 +30,9 @@ class ContentsContainer extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    renderField(field){
-        const { input, label, type, meta: {touched, error} } = field
-        
-        return (
-            <TextField 
-                hintText={label}
-                floatingLabelText={label}
-                type={type}
-                errorText={touched && error}
-                {...input}
-            />
-        )
-    }
+    renderEvents(){
+    };
+
     async onSubmit(values){
         await this.props.submitTweet(values)
         // this.props.history.push('/')
@@ -56,6 +49,13 @@ class ContentsContainer extends Component {
     }
     
     render(){
+
+        console.log('----------state--------')
+        console.log(this.state)
+        console.log('----------state--------')
+        console.log('----------props--------')
+        console.log(this.props)
+        console.log('----------props--------')
 
         const { projects } = this.props;
 
@@ -75,33 +75,18 @@ class ContentsContainer extends Component {
                 </form> */}
                 <h1>aaaaa</h1>
 
-                {/* <form onSubmit={handleSubmit(this.onSubmit)}>
-                    <div><Field label="Title" name="title" type="text" component={this.renderField} /></div>
-                    <div><Field label="Body" name="body" type="text" component={this.renderField} /></div>
-
-                    <RaisedButton label="Submit" type="submit" style={style} />
-                </form> */}
-
                 <form onSubmit={this.firebase_submit}>
 
                     <textarea id="content" onChange={this.handleChange} />
                     <button>create</button>
                 </form>
-
+        
+                <PostList props={this.props} />
 
             </div>
         )
     }
 }
-
-const validate = values => {
-    const errors = {}
-
-    if (!values.title) errors.title = "タイトルが空です"
-    if (!values.body) errors.body = "内容が空です"
-    return errors
-}
-
 
 const mapDispatchToProps = dispatch => {
     return {
