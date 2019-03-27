@@ -9,8 +9,6 @@ import { firebaseLogin, loginStatus, firebaseLogout, submitTweet, createProject,
 
 import classes from '../assets/ContentsContainer.css'
 
-{/* <div className={classes.BuildControls}> */}
-
 class ContentsContainer extends Component {
 
     state={
@@ -37,7 +35,6 @@ class ContentsContainer extends Component {
     render(){
         return(
             <div>
-                {/* <div className="contentsContainer"> */}
                 <div className={classes.ContentsContainer}>
                     <form onSubmit={this.firebase_submit}>
                         <textarea id="content" onChange={this.handleChange} />

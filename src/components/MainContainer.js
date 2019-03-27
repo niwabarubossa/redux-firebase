@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../assets/MainContainer.css'
+import classes from '../assets/MainContainer.css'
 import TweetsContainer from './TweetsContainer'
 import TweetsDisplaysContainer from './TweetsDisplaysContainer'
 
 class MainContainer extends Component {
     render(){
         return(
-            <div className="mainContainer">
+            <div className={classes.mainContainer}>
                 <TweetsContainer />
                 <TweetsDisplaysContainer />
             </div>

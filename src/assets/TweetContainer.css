@@ -3,12 +3,10 @@ body{
 }
 .tweetsContainer{
     margin: 10px;
-    border:solid 1px green;
 }
 .tweetContainer{
     background-color: orange;
     margin:10px auto;
-    /* border:solid 1px orange; */
     width:500px;
     height:auto;
 }
@@ -18,7 +16,7 @@ body{
     height:100px;
     border-radius:50px;
     background-size:cover;
-    background-image:url(../assets/images/1024x1024bb.jpg);
+    /* background-image:url(../assets/images/1024x1024bb.jpg); */
     
 }
 .contentsContainer{
@@ -28,7 +26,6 @@ body{
 .buttonContainer{
     /* background-color:white; */
     height:30px;
-    border:solid 1px gray;
 }
 .clearfix::after{
     content: "";

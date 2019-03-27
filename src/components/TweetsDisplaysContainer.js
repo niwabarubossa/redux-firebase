@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import '../assets/TweetsDisplaysContainer.css'
+import classes from '../assets/TweetsDisplaysContainer.css'
 
 import { connect } from 'react-redux'
 import { getTweets } from '../actions'
-
 import firebase from 'firebase';
-// import { firestore } from '../plugins/firebase'
 import 'firebase/firestore';
-import { runInThisContext } from 'vm';
 
 class TweetsDisplaysContainer extends Component {
     constructor(props){
@@ -17,7 +14,7 @@ class TweetsDisplaysContainer extends Component {
     }
     render(){
         return(
-            <div className="TweetsDisplaysContainer">
+            <div className={classes.TweetsDisplaysContainer}>
             </div>
         )
     }

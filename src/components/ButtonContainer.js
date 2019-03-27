@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../assets/TweetContainer.css'
+import classes from  '../assets/TweetContainer.css'
 
 class ButtonContainer extends Component {
     render(){
         return(
-            <div className="buttonContainer">
+            <div className={classes.buttonContainer}>
             aaa
             </div>
         )

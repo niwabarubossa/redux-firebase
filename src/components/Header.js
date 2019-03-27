@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../assets/Header.css'
+import classes from '../assets/Header.css'
 
 class Header extends Component {
     render(){
         return(
-            <div className="header">
+            <div className={classes.header}>
                 Opty
             </div>
         )
