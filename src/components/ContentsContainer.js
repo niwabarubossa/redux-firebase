@@ -112,8 +112,11 @@ const mapDispatchToProps = dispatch => {
   };
 
 const mapStateToProps = (state) => {
+    console.log('---------------')
+    console.log(state)
+    console.log('---------------')
     return {
-        projects: state.firebase.projects
+        projects: state.firestore.ordered.projects
     }
 }
 // const mapDispatchToProps = ({ submitTweet })
@@ -124,6 +127,6 @@ const mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps,mapDispatchToProps),
     firestoreConnect([
-        { collection: 'projects'}
+        { collection: 'projects' }
     ])
 )(ContentsContainer)

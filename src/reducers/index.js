@@ -4,8 +4,12 @@ import { reducer as form } from 'redux-form'
 import { firestoreReducer } from 'redux-firestore'
 
 
-export default combineReducers({ firebase, form })
-// const rootReducer = combineReducers({
+export default combineReducers({ 
+    firebase: firebase,
+    form: form,
+    firestore: firestoreReducer 
+});
+// export default rootReducer = combineReducers({
 //     firebase: firebase,
 //     form: form,
 //     firestore: firestoreReducer
