@@ -60,9 +60,6 @@ export const getPosts = () => {
 }
 export const createProject = (project) => {
     return ( dispatch, getState , { getFirebase, getFireStore } ) => {
-        //make async call
-        // const firestore = getFireStore;
-
         firestore.collection('projects').add({
             ...project,
             authorFirstName: 'ryo',

@@ -5,7 +5,7 @@ class Header extends Component {
     render(){
         return(
             <div className={classes.header}>
-                Opty
+                <h3 className={classes.logo}>Opty</h3>
             </div>
         )
     }

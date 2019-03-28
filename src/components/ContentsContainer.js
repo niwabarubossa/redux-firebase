@@ -7,7 +7,9 @@ import 'firebase/firestore';
 import PostList from './PostList'
 import { firebaseLogin, loginStatus, firebaseLogout, submitTweet, createProject, getPosts } from '../actions'
 
+
 import classes from '../assets/ContentsContainer.css'
+import Button from '@material-ui/core/Button';
 
 class ContentsContainer extends Component {
 
@@ -35,10 +37,11 @@ class ContentsContainer extends Component {
     render(){
         return(
             <div>
-                <div className={classes.ContentsContainer}>
-                    <form onSubmit={this.firebase_submit}>
-                        <textarea id="content" onChange={this.handleChange} />
-                        <button>create</button>
+                <div className={classes.contentsContainer}>
+                    <form onSubmit={this.firebase_submit} className={classes.tweetForm}>
+                        <textarea id="content" onChange={this.handleChange} className={classes.tweetTextArea} />
+                        <button className={classes.tweetSubmitButton}>create</button>
+                        <Button variant="contained" color="primary" className={classes.tweetSubmitButton}>Primary</Button>
                     </form>
                 </div>
                 <div>    

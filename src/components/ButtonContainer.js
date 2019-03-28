@@ -5,7 +5,6 @@ class ButtonContainer extends Component {
     render(){
         return(
             <div className={classes.buttonContainer}>
-            aaa
             </div>
         )
     }

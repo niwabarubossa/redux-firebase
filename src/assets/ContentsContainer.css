@@ -1,3 +1,16 @@
-.ContentsContainer{
-    background-color: orange;
+.contentsContainer{
+    border:solid 1px black;
+    width:500px;
+    height:auto;
+}
+.tweetForm{
+    height:auto;
+    margin: 5px auto; 
+    border:solid 1px red;
+    text-align: center;
+}
+.tweetTextArea{
+    height:150px;
+}
+.tweetSubmitButton{
 }

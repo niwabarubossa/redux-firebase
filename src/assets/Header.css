@@ -1,5 +1,8 @@
 .header{
     height:50px;
     line-height:50px;
-    background-color:blue;
+    background-color: #a4dbe6;
+}
+.logo{
+    margin-left:30px;
 }

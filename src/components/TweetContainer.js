@@ -10,7 +10,6 @@ class TweetContainer extends Component {
             <React.Fragment>
                 <div className={classes.tweetContainer}>
                     <div className={classes.clearfix}>
-                        <ImageContainer />
                         <ContentsContainer />
                     </div>
                     <ButtonContainer />
