@@ -127,7 +127,7 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^3.9.2",
+    "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2"
   }
 }
