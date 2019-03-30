@@ -12,6 +12,11 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+
+import Comment from '@material-ui/icons/Comment';
+import Autorenew from '@material-ui/icons/Autorenew';
+
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CardActions from '@material-ui/core/CardActions';
@@ -42,8 +47,13 @@ const ContentCard = ({project}) => {
               <IconButton aria-label="Add to favorites">
                 <FavoriteIcon />
               </IconButton>
-              <IconButton aria-label="Share">
-                <ShareIcon />
+
+              <IconButton aria-label="Autorenew">
+                <Autorenew />
+              </IconButton>
+
+              <IconButton aria-label="Comment">
+                <Comment />
               </IconButton>
 
             </CardActions>
