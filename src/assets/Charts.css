@@ -8,6 +8,7 @@
     width:auto;
 }
 .barChartContainer{
-    width: 500px;
+    width: 100%;
     margin:10px auto;
+    border:solid 1px red;
 }

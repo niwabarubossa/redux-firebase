@@ -1,3 +1,8 @@
 .mainContainer{
     height:auto;
+    border:solid 1px red;
+    margin:30px 150px;
+}
+.youso1{
+    border: solid 1px red;
 }
