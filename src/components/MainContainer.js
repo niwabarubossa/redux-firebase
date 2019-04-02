@@ -11,14 +11,16 @@ class MainContainer extends Component {
         return(
             <div className={classes.mainContainer}>
                 <Grid container spacing={16} >
-                <Grid item xs={2}>
-                </Grid>
-
-                    <Grid item xs={6}>
-                        <ChartContainer />
+                    <Grid item xs={2}>
+                        I am a xs = 3 positionI am a xs = 2 position
+                        I am a xs = 2 position
+                        I am a xs = 2 position
                     </Grid>
                     <Grid item xs={6}>
                         <TweetsContainer />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <ChartContainer />
                     </Grid>
                 </Grid>
             </div>
