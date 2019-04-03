@@ -1,7 +1,8 @@
 .cardContainer{
     text-align: center;
     height:200px;
-    margin:10px
+    width: 90%;
+    margin:2px auto;
 }
 .avatar{
     background-image: url('../assets/images/1024x1024bb.jpg');

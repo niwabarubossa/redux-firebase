@@ -3,7 +3,7 @@ import ContentCard from './ContentCard'
 
 const PostList = ({props}) => {
   return (
-    <div className="project-list section">
+    <div>
       { props.projects && props.projects.map(project => {
         return (
           <ContentCard project={project} key={project.id} />

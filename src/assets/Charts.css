@@ -1,6 +1,5 @@
 .chartContainer{
     margin-top:10px;
-    text-align:center;
 }
 .barChart{
 }
@@ -8,6 +7,6 @@
     width:auto;
 }
 .barChartContainer{
-    width: 500px;
+    width: 100%;
     margin:10px auto;
 }
