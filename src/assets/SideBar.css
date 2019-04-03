@@ -1,0 +1,17 @@
+.SideBarContainer{
+    padding:20px;
+    border:solid 1px red;
+}
+.SideBarContentContainer{
+    border:solid 1px black;   
+    height:20px;
+    line-height: 20px;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .icon1,.icon2{
+      float: left;
+  }
