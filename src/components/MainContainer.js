@@ -17,6 +17,7 @@ class MainContainer extends Component {
                         I am a xs = 2 position
                     </Grid>
                     <Grid item xs={6}>
+                        
                         <TweetsContainer />
                     </Grid>
                     <Grid item xs={4}>

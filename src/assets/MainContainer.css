@@ -1,6 +1,7 @@
 .mainContainer{
     height:auto;
     width:90%;
+    max-width: 1050px;
     margin:30px auto;
     background-color: #F7F7F7;
 }
