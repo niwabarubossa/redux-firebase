@@ -18,8 +18,14 @@ class SideBarContent extends Component {
     render(){
         return(
             <div className={classes.SideBarContentContainer}>
-                <div className={classes.commentIcon}>  
-                    Comment
+                <div className={classes.clearfixContainer}>
+                    <div className={classes.clearfix}>
+                        <div className={classes.commentIcon}>  
+                        </div>
+                        <div className={classes.sidebarContent}>
+                        タイムライン
+                        </div>
+                    </div>
                 </div>
             </div>
         )
