@@ -21,8 +21,15 @@ class MainContainer extends Component {
                         <TweetsContainer />
                     </Grid>
                     <Grid item xs={4}>
-                        <ContentsHeader content={'記録'} />
-                        <ChartContainer />
+                            <div className={classes.sample2}></div>
+                            <ContentsHeader content={'記録'} />
+                            <ChartContainer />
+                            <div className={classes.sample1}></div>
+                        <ContentsHeader content={'仮置き2'} />
+                            <div className={classes.sample1}></div>
+                        <ContentsHeader content={'仮置き3'} />
+                            <div className={classes.sample1}></div>
+                        
                     </Grid>
                 </Grid>
             </div>

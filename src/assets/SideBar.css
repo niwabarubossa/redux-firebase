@@ -21,16 +21,20 @@ svg{
     background-repeat: no-repeat;
 }
 .sidebarContent{
+    width:90px;
     float:left;
     margin:0px auto;
     font-size:14px;
     letter-spacing: 1px;
 }
 .clearfixContainer{
-    margin: 0px auto;
+    width: auto;
 }
 .clearfix::after{
     content: "";
     display: block;
     clear: both;
+}
+.inClearfix{
+    width: auto;
 }

@@ -3,5 +3,6 @@
     border-top:solid 3px skyblue;
     height:45px;
     line-height: 45px;
+    font-weight: bold;
     text-align: center;
 }

@@ -20,10 +20,12 @@ class SideBarContent extends Component {
             <div className={classes.SideBarContentContainer}>
                 <div className={classes.clearfixContainer}>
                     <div className={classes.clearfix}>
-                        <div className={classes.commentIcon}>  
-                        </div>
-                        <div className={classes.sidebarContent}>
-                        タイムライン
+                        <div className={classes.inClearfix}>
+                            <div className={classes.commentIcon}>  
+                            </div>
+                            <div className={classes.sidebarContent}>
+                            タイムライン
+                            </div>
                         </div>
                     </div>
                 </div>
