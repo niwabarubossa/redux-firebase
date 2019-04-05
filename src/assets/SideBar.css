@@ -1,0 +1,40 @@
+.SideBarContainer{
+    padding: 10px 5px;
+}
+.SideBarContentContainer{
+    /* border:solid 1px black;    */
+    border-radius: 1px;
+    background-color: white;
+    height:20px;
+    line-height: 20px;
+    margin: 10px auto;
+    color:gray;
+}
+svg{
+    fill:red;
+}
+.commentIcon{
+    float:left;
+    width:20px;
+    height:20px;
+    background-image: url('./images/chat.svg');
+    background-repeat: no-repeat;
+}
+.sidebarContent{
+    width:90px;
+    float:left;
+    margin:0px auto;
+    font-size:14px;
+    letter-spacing: 1px;
+}
+.clearfixContainer{
+    width: auto;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.inClearfix{
+    width: auto;
+}
