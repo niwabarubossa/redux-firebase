@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from '../assets/MainContainer.css'
 import SideBar from './SideBar'
+import TweetsHeader from './TweetsHeader'
 import TweetsContainer from './TweetsContainer'
 import TweetsDisplaysContainer from './TweetsDisplaysContainer'
 import ChartContainer from './charts/ChartContainer'
@@ -16,7 +17,7 @@ class MainContainer extends Component {
                         <SideBar />
                     </Grid>
                     <Grid item xs={6}>
-                        
+                        <TweetsHeader />
                         <TweetsContainer />
                     </Grid>
                     <Grid item xs={4}>
