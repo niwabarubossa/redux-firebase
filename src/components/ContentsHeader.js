@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import classes from '../assets/TweetsHeader.css'
 
-class TweetsHeader extends Component {
+
+class ContentsHeader extends Component {
     render(){
         return(
             <div className={classes.tweetsHeaderContainer}>
-                Your Time Line
+                {this.props.content}
             </div>
         )
     }
 }
 
-export default TweetsHeader;
+export default ContentsHeader;

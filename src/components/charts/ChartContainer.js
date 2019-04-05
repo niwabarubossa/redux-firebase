@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from '../../assets/Charts.css'
+import ContentsHeader from '../ContentsHeader'
 
 import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,ResponsiveContainer

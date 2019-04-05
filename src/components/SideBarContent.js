@@ -18,7 +18,7 @@ class SideBarContent extends Component {
     render(){
         return(
             <div className={classes.SideBarContentContainer}>
-                <div className={classes.commentIcon}>
+                <div className={classes.commentIcon}>  
                     Comment
                 </div>
             </div>
