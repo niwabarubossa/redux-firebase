@@ -175,9 +175,6 @@ class PrimarySearchAppBar extends React.Component {
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                 <Link to={'/'} style={{textDecoration : 'none',color: 'white' }} className={classes.headerLogo}>Opty</Link>
             </Typography>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                <Link to={'/management'} style={{textDecoration : 'none',color: 'white' }} className={classes.headerLogo}>管理画面へ</Link>
-            </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -190,6 +187,9 @@ class PrimarySearchAppBar extends React.Component {
                 }}
               />
             </div>
+            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+                <Link to={'/management'} style={{textDecoration : 'none',color: 'white' }} className={classes.headerLogo}>管理画面へ</Link>
+            </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton color="inherit">
