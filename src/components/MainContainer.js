@@ -32,7 +32,7 @@ class MainContainer extends Component {
                         
                     </Grid>
                 </Grid>
-            </div>
+             </div>
         )
     }
 }
