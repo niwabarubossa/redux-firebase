@@ -5,7 +5,6 @@ class MainContainer extends Component {
     render(){
         return(
             <div className={classes.managementMainContainer}>
-                I am a MainContainer
                 <MainContent />
             </div>
         )

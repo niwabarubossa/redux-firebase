@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ColorBoxContent from './ColorBoxContent'
 import classes from '../../assets/managementPage/ColorBox.css'
-
+import FloatingActionButton from 'material-ui/FloatingActionButton'
+import ContentAdd from 'material-ui/svg-icons/content/add'
 class Popup extends React.Component {
     render() {
       return (
@@ -28,24 +29,34 @@ class ColorBox extends Component {
     }
 
     render(){
+        const AddBtnStyle={
+            position: "fixed",
+            right: 12,
+            bottom: 12
+        }
+
         return(
-            <div>
-                this is Color box
-                <div className='colorBox'>
-                    <h1>hihi</h1>
-                    <button onClick={this.togglePopup.bind(this)}>show popup</button>
-                    <button onClick={() => {alert('hahha?');}}>try me when popup is open</button>
-                    <p>Ganz viel inhalt</p>
-                    {this.state.showPopup ? 
-                        <Popup
-                        text='Close Me'
-                        closePopup={this.togglePopup.bind(this)}
-                        />
-                        : null
-                    }
+            <React.Fragment>
+                <div className={classes.colorBoxContainer}>
+                    <div className={classes.colorBox}>
+                        <button onClick={this.togglePopup.bind(this)}>記録する</button>
+                        {this.state.showPopup ? 
+                            <Popup
+                            text='Close Me'
+                            closePopup={this.togglePopup.bind(this)}
+                            />
+                            : null
+                        }
+                    </div>
+                    <ColorBoxContent />
                 </div>
-                <ColorBoxContent />
-            </div>
+                
+
+                <FloatingActionButton style={AddBtnStyle} onClick={this.togglePopup.bind(this)}>
+                    <ContentAdd />
+                </FloatingActionButton>
+            </React.Fragment>
+
         )
     }
 }
