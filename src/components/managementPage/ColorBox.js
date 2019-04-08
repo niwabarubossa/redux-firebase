@@ -30,7 +30,7 @@ class ColorBox extends Component {
     render(){
         return(
             <div>
-                Color box
+                this is Color box
                 <div className='colorBox'>
                     <h1>hihi</h1>
                     <button onClick={this.togglePopup.bind(this)}>show popup</button>
@@ -49,6 +49,7 @@ class ColorBox extends Component {
         )
     }
 }
+
 
 export default ColorBox;
 
