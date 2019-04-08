@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import MainContent from './MainContent'
+import classes from '../../assets/managementPage/MainContainer.css'
 class MainContainer extends Component {
     render(){
         return(
-            <div>
+            <div className={classes.managementMainContainer}>
                 I am a MainContainer
                 <MainContent />
             </div>
