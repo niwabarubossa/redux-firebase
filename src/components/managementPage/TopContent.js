@@ -9,16 +9,16 @@ class TopContent extends Component {
             <div className={classes.topContentContainer}>
                 <Grid container>
                     <Grid item xs={6} lg={3}>
+                        <ColorBox style={{backgroundColor: '#1fa8d8'}} />
+                    </Grid>
+                    <Grid item xs={6} lg={3}>
+                        <ColorBox style={{backgroundColor: '#63c2de'}} />
+                    </Grid>
+                    <Grid item xs={6} lg={3}>
+                        <ColorBox style={{backgroundColor: '#FEC24D'}} />
+                    </Grid>
+                    <Grid item xs={6} lg={3}>
                         <ColorBox style={{backgroundColor: '#f86c6b'}} />
-                    </Grid>
-                    <Grid item xs={6} lg={3}>
-                        <ColorBox />
-                    </Grid>
-                    <Grid item xs={6} lg={3}>
-                        <ColorBox />
-                    </Grid>
-                    <Grid item xs={6} lg={3}>
-                        <ColorBox />
                     </Grid>
                 </Grid>
             </div>

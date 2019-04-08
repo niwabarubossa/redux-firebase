@@ -38,8 +38,9 @@ class ColorBox extends Component {
         return(
             <React.Fragment>
                 <div className={classes.colorBoxContainer}>
-                    <div className={classes.colorBox}>
-                        <button onClick={this.togglePopup.bind(this)}>記録する</button>
+                    <div className={classes.colorBox} style={this.props.style} onClick={this.togglePopup.bind(this)} >
+                        {/* <button>記録する</button> */}
+                        <ColorBoxContent />
                         {this.state.showPopup ? 
                             <Popup
                             text='Close Me'
@@ -48,7 +49,6 @@ class ColorBox extends Component {
                             : null
                         }
                     </div>
-                    <ColorBoxContent />
                 </div>
                 
 

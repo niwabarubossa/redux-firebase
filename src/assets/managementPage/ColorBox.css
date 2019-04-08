@@ -23,9 +23,10 @@
   height:150px;
   width:100%;
   vertical-align: middle;
-  /* background-color: #1fa8d8; */
+  padding:5px;
 }
 .colorBox{
+  border-radius:1px;
   height:150px;
   width:100%;
   display: flex;

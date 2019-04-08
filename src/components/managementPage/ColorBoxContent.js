@@ -4,7 +4,10 @@ import classes from '../../assets/managementPage/ColorBoxContent.css'
 class ColorBoxContent extends Component {
     render(){
         return(
-            <div>
+            <div className={classes.colorBoxContent}>
+                <p>this is a content</p>
+                <p>this is a content</p>
+                <p>this is a content</p>
             </div>
         )
     }
