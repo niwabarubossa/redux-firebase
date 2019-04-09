@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Popup from './components/Popup'
 import TweetsContainer from './components/TweetsContainer'
 import MainContainer from './components/MainContainer'
 import ManagementPage from './components/managementPage/ManagementPage'
@@ -60,15 +61,27 @@ const styles = theme => ({
 });
 
 class App extends Component {
+  constructor() {
+      super();
+      this.state = {
+        showPopup: false
+      };
+  }
   state = {
       mobileOpen: false,
   };
   handleDrawerToggle = () => {
       this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
 
   render() {
     const { classes, theme } = this.props;
+    
     const drawer = (
       <div>
         <div className={classes.toolbar} />
@@ -117,7 +130,7 @@ class App extends Component {
                     <Typography variant="h6" color="inherit" noWrap>
                         <Link to={'/'} style={{textDecoration : 'none',color: 'white' }}>Opty</Link>
                         <Link to={'/management'} style={{textDecoration : 'none',color: 'white',marginLeft: '10px' }}>管理画面へ</Link>
-                        <Link to={'/management'} style={{textDecoration : 'none',color: 'white',marginLeft: '10px' }}>drawerHeader</Link>
+                        <button onClick={this.togglePopup.bind(this)}>記録する</button>
                     </Typography>
                   </Toolbar>
                 </AppBar>
@@ -150,6 +163,13 @@ class App extends Component {
                     </nav>
 
               <main className={classes.content}>
+                {this.state.showPopup ? 
+                              <Popup
+                              text='Close Me'
+                              closePopup={this.togglePopup.bind(this)}
+                              />
+                              : null
+                          }
                 <Route exact path="/" component={MainContainer} />
                 <Route exact path="/management" component={ManagementPage} />
               </main>
