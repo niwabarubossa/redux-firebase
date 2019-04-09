@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
+import classes from '../../assets/managementPage/MiddleContent.css'
+import ChartContainer from './ChartContainer'
 class MiddleContent extends Component {
     render(){
         return(
-            <div>
-                Middle COntent
+            <div className={classes.middleContentContainer}>
+                <ChartContainer />
             </div>
         )
     }
