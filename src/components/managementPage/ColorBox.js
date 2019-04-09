@@ -3,18 +3,8 @@ import ColorBoxContent from './ColorBoxContent'
 import classes from '../../assets/managementPage/ColorBox.css'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
-class Popup extends React.Component {
-    render() {
-      return (
-        <div className={classes.popup} style={{zIndex: 2}}>
-          <div className={classes.popup_inner}>
-            <h1>{this.props.text}</h1>
-          <button onClick={this.props.closePopup}>close me</button>
-          </div>
-        </div>
-      );
-    }
-}
+import Popup from '../Popup'
+
 class ColorBox extends Component {
     constructor() {
         super();
@@ -32,14 +22,14 @@ class ColorBox extends Component {
         const AddBtnStyle={
             position: "fixed",
             right: 12,
-            bottom: 12
+            bottom: 12,
+            zIndex: 2
         }
 
         return(
             <React.Fragment>
                 <div className={classes.colorBoxContainer}>
                     <div className={classes.colorBox} style={this.props.style} onClick={this.togglePopup.bind(this)} >
-                        {/* <button>記録する</button> */}
                         <ColorBoxContent />
                         {this.state.showPopup ? 
                             <Popup
@@ -50,13 +40,11 @@ class ColorBox extends Component {
                         }
                     </div>
                 </div>
-                
 
                 <FloatingActionButton style={AddBtnStyle} onClick={this.togglePopup.bind(this)}>
                     <ContentAdd />
                 </FloatingActionButton>
             </React.Fragment>
-
         )
     }
 }

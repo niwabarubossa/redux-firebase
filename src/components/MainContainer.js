@@ -170,8 +170,7 @@ class MainContainer extends Component {
                                     <ContentsHeader content={'仮置き2'} />
                                         <div className={classes.sample1}></div>
                                     <ContentsHeader content={'仮置き3'} />
-                                        <div className={classes.sample1}></div>
-                                    
+                                        <div className={classes.sample1}></div>       
                                 </Grid>
                             </Grid>
                         </div>
