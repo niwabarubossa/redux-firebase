@@ -115,6 +115,7 @@ class ManagementPage extends React.Component {
                 <Typography variant="h6" color="inherit" noWrap>
                     <Link to={'/'} style={{textDecoration : 'none',color: 'white' }}>Opty</Link>
                     <Link to={'/management'} style={{textDecoration : 'none',color: 'white',marginLeft: '10px' }}>管理画面へ</Link>
+                    <Link to={'/management'} style={{textDecoration : 'none',color: 'white',marginLeft: '10px' }}>あああ</Link>
                 </Typography>
               </Toolbar>
             </AppBar>
