@@ -13,14 +13,11 @@ class MainContainer extends Component {
         return(
             <div className={classes.mainContainer}>
                 <Grid container spacing={16} >
-                    <Grid item xs={2}>
-                        <SideBar />
-                    </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} md={6}>
                         <ContentsHeader content={'Your TimeLine'} />
                         <TweetsContainer />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={12} md={6}>
                             <div className={classes.sample2}></div>
                             <ContentsHeader content={'記録'} />
                             <ChartContainer />
