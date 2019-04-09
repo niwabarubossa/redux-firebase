@@ -8,6 +8,7 @@
     bottom: 0;
     margin: auto;
     background-color: rgba(0,0,0, 0.5);
+    display:flex;
 }
 .popup_inner {
     position: absolute;
@@ -17,6 +18,9 @@
     bottom: 25%;
     margin: auto;
     background: white;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .colorBoxContainer{
   display:flex;

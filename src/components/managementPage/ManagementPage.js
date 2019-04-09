@@ -74,16 +74,22 @@ class ManagementPage extends React.Component {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-              {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
+                  <Link to={'/'} style={{textDecoration : 'none',color: 'white' }} >
+                      <ListItem button key={'aaa'}>
+                      <ListItemIcon> <InboxIcon /> </ListItemIcon>
+                      <ListItemText primary={'トップページ'} />
+                      </ListItem>
+                  </Link>
+                  <Link to={'/management'} style={{textDecoration : 'none',color: 'white' }} >
+                      <ListItem button key={'aaa'}>
+                      <ListItemIcon> <InboxIcon /> </ListItemIcon>
+                      <ListItemText primary={'管理画面へ'} />
+                      </ListItem>
+                  </Link>
             </List>
             <Divider />
             <List>
-              {['All mail', 'Trash', 'Spam'].map((text, index) => (
+              {['目標１', '目標２', '目標３'].map((text, index) => (
                 <ListItem button key={text}>
                   <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                   <ListItemText primary={text} />
