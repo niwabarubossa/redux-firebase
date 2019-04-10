@@ -4,6 +4,7 @@ import './App.css';
 import Popup from './components/Popup'
 import TweetsContainer from './components/TweetsContainer'
 import MainContainer from './components/MainContainer'
+import RouterDisplay from './components/RouterDisplay'
 import ManagementPage from './components/managementPage/ManagementPage'
 import GetPostList from './components/containers/GetPostListContainer'
 import { withStyles } from '@material-ui/core/styles';
@@ -172,6 +173,7 @@ class App extends Component {
                           }
                 <Route exact path="/" component={MainContainer} />
                 <Route exact path="/management" component={ManagementPage} />
+                <Route path="/:id" component={RouterDisplay} />
               </main>
             </div>
           </div>
