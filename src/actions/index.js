@@ -65,6 +65,7 @@ export const createProject = (project) => {
             authorFirstName: 'ryo',
             authorLastName: 'rrrr',
             authorId: 12345,
+            tweet_id:  Math.floor(Math.random() * 1000 ),
             createdAt: new Date()
         }).then(() => {
             dispatch({ type: CREATE_PROJECT, project});

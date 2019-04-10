@@ -37,13 +37,13 @@ class ContentsContainer extends Component {
     render(){
         return(
             <div>
-                {/* <div className={classes.contentsContainer}>
+                <div className={classes.contentsContainer}>
                     <form onSubmit={this.firebase_submit} className={classes.tweetForm}>
                         <textarea id="content" onChange={this.handleChange} className={classes.tweetTextArea} />
                         <button className={classes.tweetSubmitButton}>create</button>
                         <Button variant="contained" color="primary" className={classes.tweetSubmitButton}>Primary</Button>
                     </form>
-                </div> */}
+                </div>
                 <div>    
                     <PostList props={this.props} />
                 </div>
